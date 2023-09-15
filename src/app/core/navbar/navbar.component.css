@@ -1,0 +1,20 @@
+
+.mat-toolbar {
+    background-color: #2196F3; 
+    color: white;
+  }
+  
+  .custom-title {
+    font-size: 24px; 
+  }
+  
+  .custom-link {
+    text-decoration: none; 
+    color: white; 
+    margin-right: 1em;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  

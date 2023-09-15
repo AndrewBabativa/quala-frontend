@@ -1,0 +1,31 @@
+<div class="form-container">
+  <form (ngSubmit)="guardarSucursal()">
+
+    <label for="codigo" class="form-label">Código:</label>
+    <input type="number" id="codigo" [(ngModel)]="nuevaSucursal.codigo" [ngModelOptions]="{ standalone: true }" required class="form-input">
+    
+    <label for="descripcion" class="form-label">Descripción:</label>
+    <input type="text" id="descripcion" [(ngModel)]="nuevaSucursal.descripcion" [ngModelOptions]="{ standalone: true }" required class="form-input">
+
+    <label for="direccion" class="form-label">Dirección:</label>
+    <input type="text" id="direccion" [(ngModel)]="nuevaSucursal.direccion" [ngModelOptions]="{ standalone: true }" required class="form-input">
+
+    <label for="identificacion" class="form-label">Identificación:</label>
+    <input type="text" id="identificacion" [(ngModel)]="nuevaSucursal.identificacion" [ngModelOptions]="{ standalone: true }" required class="form-input">
+
+    <label for="fechaCreacion" class="form-label">Fecha Creación:</label>
+    <input type="date" id="fechaCreacion" [(ngModel)]="nuevaSucursal.fechaCreacion" [ngModelOptions]="{ standalone: true }" required class="form-input">
+
+    <label for="moneda" class="form-label">Moneda:</label>
+    <select id="moneda" [(ngModel)]="nuevaSucursal.monedaID" [ngModelOptions]="{ standalone: true }" required class="form-input">
+      <option *ngFor="let moneda of monedas" [value]="moneda.id">{{ moneda.nombre }} ({{ moneda.simbolo }})</option>
+    </select>
+
+    <button type="submit" class="form-button">Guardar Sucursal</button>
+
+    <div *ngIf="errorMensaje" class="error-message">
+      {{ errorMensaje }}
+    </div>
+    
+  </form>
+</div>
